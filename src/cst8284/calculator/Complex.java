@@ -34,7 +34,8 @@ public class Complex {
 	
 	// Complex constructor that takes in two ints as parameters, e.g. 2 and -4
 	public Complex(int r, int i){
-		//TODO: chain the input from this constructor to the next constructor,
+	  this((double) r, (double) i);
+		//chain the input from this constructor to the next constructor,
 		// which has a (double, double) signature
 	}
 	

@@ -13,12 +13,12 @@ public class ComplexCalculatorTest {
       System.out.println("Welcome to the Complex Calculator\n");
       
       while(true){   //loop until 'Q' entered by user, below
-    	 Complex c1 = ComplexCalculatorTest.getComplexNumber();  // read in the 1st complex
-    	 Complex c2 = ComplexCalculatorTest.getComplexNumber();  // read in the 2nd complex number
-    	 calc = new ComplexCalculator(c1, c2);                   // perform the calculation
-         System.out.println("The result is: " + calc.toString());  // output the result
-         System.out.println ("Do you wish to continue? Enter Q to quit or anything else to continue");
-         if (input.next().charAt(0)=='Q') break;              // press 'Q' to quit, otherwise loop
+        Complex c1 = ComplexCalculatorTest.getComplexNumber();  // read in the 1st complex
+        Complex c2 = ComplexCalculatorTest.getComplexNumber();  // read in the 2nd complex number
+        calc = new ComplexCalculator(c1, c2);                   // perform the calculation
+        System.out.println("The result is: " + calc.toString());  // output the result
+        System.out.println ("Do you wish to continue? Enter Q to quit or anything else to continue");
+        if (input.next().charAt(0)=='Q') break;              // press 'Q' to quit, otherwise loop
       }
    }
    
@@ -56,10 +56,10 @@ public class ComplexCalculatorTest {
    //Standard menu method; prompts user to enter input type for Complex constructor
    private static int displayTypeInputMenu(){
       System.out.printf("%s\n\t%s\n\t%s\n\t%s", 
-    	"Enter the format of the complex number to be entered:", 
-  		"1. A single string",
-        "2. Two strings",
-        "3. Two integer values\n");
+      "Enter the format of the complex number to be entered:", 
+      "1. A single string",
+      "2. Two strings",
+      "3. Two integer values\n");
       return(input.nextInt());
    }
    

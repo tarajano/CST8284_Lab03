@@ -60,7 +60,7 @@ public class ComplexCalculator {
 	// result of the current calculation i.e. the Complex value c associated with the
 	// ComplexCalculator class.  
 	public Complex getComplexResult(){
-		
+		return this.c;
 	}
 
 	
@@ -69,7 +69,7 @@ public class ComplexCalculator {
 	// associated with the ComplexCalculator class, but chain the toString() method of 
 	// the Complex class for this purpose.
 	public String toString(){
-		
+		return "The result is: " + c.toString();
 	}
 	
 
