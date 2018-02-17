@@ -16,10 +16,16 @@ public class ComplexCalculator {
       c = plus(c1, c2);
       break;
     case '-':
+      c = subtract(c1, c2);
+      break;
       // TODO: Call the subtraction method here
     case '*':
+      c = multiply(c1, c2);
+      break;
       // TODO: Call the multiplication method here
     case '/':
+      c = divide(c1, c2);
+      break;
       // TODO: Call the division method here
     default:
       System.out.println("Unknown operation requested");
@@ -55,10 +61,19 @@ public class ComplexCalculator {
      // TODO: check for possible
      //  division by 0 and output an error message to the screen //return a
      // constructor with value 0 + 0i);
-     double realNumerator =;
-     double realDenominator =;
-//     double imagNumerator =;
-//     double imagDenominator =; 
+     double denominator = Math.pow(c2.getReal(), 2) + Math.pow(c2.getImag(), 2);
+     
+     if (denominator == 0) {
+       System.out.println("Illegal division by zero.");
+       c = new Complex(0,0);
+       return (c);
+     }
+     
+     double realNumerator = c1.getReal() * c2.getReal() + c1.getImag() * c2.getImag(); 
+     double imagNumerator = c2.getReal() * c1.getImag() - c1.getReal() * c2.getImag();
+     double real = realNumerator / denominator;  
+     double imag = imagNumerator / denominator;
+     c = new Complex(real, imag);
      return (c);
     }
 
