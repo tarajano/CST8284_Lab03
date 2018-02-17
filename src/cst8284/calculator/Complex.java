@@ -3,7 +3,7 @@ package cst8284.calculator;
 public class Complex {
 	private double real = 0;
 	private double imag = 0;
-	
+	private static int counter = 0; 
 	
 	// Complex constructor that takes in a single string, e.g. "2-4i"
 	public Complex(String cStr){
@@ -37,11 +37,20 @@ public class Complex {
 	public Complex(double r, double i){
 		this.setReal(r);
 		this.setImag(i);
+    setCounter();
 	}
 	
 	//default Complex constructor; it should chain automatically 
-	public Complex(){this(0,0);	}
-	
+	public Complex(){
+	  this(0,0);
+	}
+
+	//getCounter() returns number of Complex objects created
+  public static int getCounter() {return counter;}
+  
+  //incCounter() increments by one the number of Complex objects created;
+  private static void setCounter() {++counter;}
+  
 	//getReal() that returns the real value of the Complex number
 	public double getReal() {return this.real;}
 	

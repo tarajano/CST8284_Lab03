@@ -27,7 +27,7 @@ public class ComplexCalculatorTest {
 	   
    	   choice = ComplexCalculatorTest.displayTypeInputMenu();
    	   input.nextLine();
-       System.out.print("Enter a complex number ");  // Bonus B code replaces this line (one line ONLY)
+       System.out.print( Complex.getCounter() == 0 ? "Enter the first complex number " : "Enter the second complex number " );  // Bonus B code replaces this line (one line ONLY)
        
        switch(choice){
        
