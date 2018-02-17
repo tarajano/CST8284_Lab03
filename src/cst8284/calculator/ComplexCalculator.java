@@ -18,15 +18,12 @@ public class ComplexCalculator {
     case '-':
       c = subtract(c1, c2);
       break;
-      // TODO: Call the subtraction method here
     case '*':
       c = multiply(c1, c2);
       break;
-      // TODO: Call the multiplication method here
     case '/':
       c = divide(c1, c2);
       break;
-      // TODO: Call the division method here
     default:
       System.out.println("Unknown operation requested");
     }
@@ -40,9 +37,6 @@ public class ComplexCalculator {
     return (c);
   }
 
-  // TODO Uncomment the following block of code and write code to perform the other three
-  // math operations indicated, as outlined in the appendix. The plus() method
-  // above indicates what your output will look like.
   public Complex subtract(Complex c1, Complex c2) {
     double real = c1.getReal() - c2.getReal();
     double imag = c1.getImag() - c2.getImag();
@@ -58,17 +52,14 @@ public class ComplexCalculator {
    }
    
    public Complex divide(Complex c1, Complex c2){
-     // TODO: check for possible
-     //  division by 0 and output an error message to the screen //return a
-     // constructor with value 0 + 0i);
-     double denominator = Math.pow(c2.getReal(), 2) + Math.pow(c2.getImag(), 2);
      
-     if (denominator == 0) {
+     if ( c2.isZero() ) {
        System.out.println("Illegal division by zero.");
        c = new Complex(0,0);
        return (c);
      }
      
+     double denominator = Math.pow(c2.getReal(), 2) + Math.pow(c2.getImag(), 2);
      double realNumerator = c1.getReal() * c2.getReal() + c1.getImag() * c2.getImag(); 
      double imagNumerator = c2.getReal() * c1.getImag() - c1.getReal() * c2.getImag();
      double real = realNumerator / denominator;  
@@ -85,24 +76,13 @@ public class ComplexCalculator {
   // Complex
   // class, as described in the BONUS MARKS section of the Lab 3 document.
 
-  // TODO: write the code for getComplexResult() (the header is provided below)
-  // that outputs the
-  // result of the current calculation i.e. the Complex value c associated with
-  // the
-  // ComplexCalculator class.
   public Complex getComplexResult() {
     return this.c;
   }
 
-  // TODO: write the code for toString() (the header is provided below) that
-  // outputs the
-  // String value of the result of the current calculation i.e. the Complex
-  // value c
-  // associated with the ComplexCalculator class, but chain the toString()
-  // method of
-  // the Complex class for this purpose.
   public String toString() {
-    return "The result is: " + c.toString();
+    //return "The result is: " + c.toString();
+    return c.toString();
   }
 
 }

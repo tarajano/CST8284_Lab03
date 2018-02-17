@@ -17,18 +17,12 @@ public class Complex {
 	// e.g. cStr[0]="2", cStr[1]="-4i"
 	public Complex(String[] cStr){
 	  this(cStr[0], cStr[1]);
-		// TODO: chain the input from this constructor to the next constructor, that is, pass
-		// each element of the array to the next constructor, which has a (String, String) signature.
 	}
 
 	
 	// Complex constructor that takes two separate strings as parameters, e.g. "2" and "-4i"
 	public Complex(String r, String i){
 	  this(Integer.parseInt(r), Integer.parseInt(i.replaceAll("i","")));
-		//TODO: chain the input from this constructor to the next constructor, which has an (int, int) signature
-		// Note that this constructor needs to strip the 'i' from the string storing 
-		// the imaginary number; it must pass only an integer to the next constructor, 
-		// otherwise an error results
 	}
 	
 	
@@ -74,8 +68,11 @@ public class Complex {
     return realPart + sign + imagPart;
   }
 	
-	// OPTIONAL TODO: if attempting Bonus A, put your public isZero() method, with 
+	// OPTIONAL: if attempting Bonus A, put your public isZero() method, with 
 	// one-line return statement, here.  Be sure to use it in your divide() method
+  public boolean isZero() {
+    return (this.getReal() == 0 && this.getImag() == 0) ? true : false;
+  }
 		
 	
 	//OPTIONAL TODO: if attempting Bonus C, write the method to return the complex conjugate of
