@@ -83,11 +83,15 @@ public class Complex {
     return (this.getReal() == 0 && this.getImag() == 0) ? true : false;
   }
 		
-	
-	//OPTIONAL TODO: if attempting Bonus C, write the method to return the complex conjugate of
+	//OPTIONAL: if attempting Bonus C, write the method to return the complex conjugate of
 	// this Complex number.  Use the public conjugate() method with the complex multiplication to 
 	// perform the division as explained in the Bonus section, rather than using the equation 
 	// for division given in the Appendix.
+  
+  // OPTIONAL: Returns the conjugate of 'this.' complex number. 
+  public Complex conjugate() {
+    return new Complex(this.getReal(), this.getImag() * -1);
+  }
 	
 
 
