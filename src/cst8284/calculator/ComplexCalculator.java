@@ -7,7 +7,6 @@ public class ComplexCalculator {
                      // calculation
 
   public ComplexCalculator(Complex c1, Complex c2) {
-
     System.out.println("Which math operation do you wish to perform?  Enter +, -, *, /");
     char mathOp = op.nextLine().charAt(0);
 
@@ -73,20 +72,19 @@ public class ComplexCalculator {
   // Complex class, as described in the BONUS MARKS section of the Lab 3 document.
    public Complex divide(Complex c1, Complex c2){
      
-     Complex c2TimesConjugate= multiply(c2, c2.conjugate());
+     Complex c2conj = c2.conjugate();
+     Complex c2TimesConj= multiply(c2, c2conj);
      
-     if ( c2TimesConjugate.isZero() ) {
+     if ( c2TimesConj.isZero() ) {
        System.out.println("Illegal division by zero.");
        c = new Complex(0,0);
        return (c);
      }
      
-     double denominator = Math.pow(c2.getReal(), 2) + Math.pow(c2.getImag(), 2);
-     double realNumerator = c1.getReal() * c2.getReal() + c1.getImag() * c2.getImag(); 
-     double imagNumerator = c2.getReal() * c1.getImag() - c1.getReal() * c2.getImag();
-     double real = realNumerator / denominator;  
-     double imag = imagNumerator / denominator;
-     c = new Complex(real, imag);
+     Complex num = multiply(c1, c2conj);
+     double denom = c2TimesConj.getReal();
+
+     c = new Complex(num.getReal() / denom, num.getImag() / denom);
      return (c);
   }
    

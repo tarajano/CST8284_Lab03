@@ -71,10 +71,8 @@ public class Complex {
 	// on whether B is positive or negative.  (For example, it wouldn't make sense to return 3.0 +-2.0i; 
 	// when the output should be 3.0 - 2.0i.)
   public String toString() {
-    String realPart = Double.toString(this.getReal());
-    String sign = this.getImag() >= 0 ? " + " : " - ";
-    String imagPart =  Double.toString(Math.abs(this.getImag())) + "i";
-    return realPart + sign + imagPart;
+    String sign = this.getImag() >= 0 ? "+" : "-";
+    return String.format("%.2f %s %.2fi", this.getReal(), sign, this.getImag());
   }
 	
 	// OPTIONAL: if attempting Bonus A, put your public isZero() method, with 
